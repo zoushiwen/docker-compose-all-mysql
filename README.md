@@ -3,7 +3,7 @@ Create all mysql-server docker container.
 
 ## Usage
 
-### 1. Install docker toolbox
+### Install docker toolbox
 
 All docker software is installed when I install docker toolbox for windows or Mac OSX.
 
@@ -11,7 +11,7 @@ https://www.docker.com/products/docker-toolbox
 
 docker-toolbox install virtualbox, docker-engine, docker-compose, etc.
 
-### 2. Install mysql-client for local-machine
+### Install mysql-client for local-machine
 
 Install mysql client only for Mac OSX.
 ```bash
@@ -21,7 +21,7 @@ $ brew install mysql --client-only
 
 It is not necessary to install mysql-server.
 
-### 2. Create docker-machine host for mysql
+### Create docker-machine host for mysql
 
 Create mysql docker host.
 
@@ -35,15 +35,19 @@ Set environment.
 $ eval $(docker-machine env mysql)
 ```
 
-### 3. docker-compose
+### Clone this repository
 
-Run docker containers daemon.
+```bash
+git clone git@github.com:treetips/docker-compose-all-mysql.git
+```
+
+### Create and start mysql docker containers
 
 ```bash
 $ docker-compose up -d
 ```
 
-### 4. Connect any mysql-server on docker container
+### Connect any mysql-server on docker container
 
 ```bash
 # Connect mysql5.5
