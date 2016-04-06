@@ -1,6 +1,16 @@
 Create all mysql-server docker container.
 ====
 
+## Support MySQL version.
+
+- MySQL v5.5
+- MySQL v5.6
+- MySQL v5.7
+- mariadb v10.0
+- mariadb v10.1
+
+This docker-compose.yml support mysql and mariadb.
+
 ## Usage
 
 ### Install docker toolbox
@@ -49,15 +59,23 @@ $ docker-compose up -d
 
 ### Connect any mysql-server on docker container
 
+Connect remote mysql servers.
+
 ```bash
-# Connect mysql5.5
+# Connect mysql v5.5
 $ mysql -h$(docker-machine ip mysql) -P3355 -uworker -pworker work
 
-# Connect mysql5.6
+# Connect mysql v5.6
 $ mysql -h$(docker-machine ip mysql) -P3356 -uworker -pworker work
 
-# Connect mysql5.7
+# Connect mysql v5.7
 $ mysql -h$(docker-machine ip mysql) -P3357 -uworker -pworker work
+
+# Connect mariadb v10.0
+$ mysql -h$(docker-machine ip mysql) -P3310 -uworker -pworker work
+
+# Connect mariadb v10.1
+$ mysql -h$(docker-machine ip mysql) -P3311 -uworker -pworker work
 ```
 
 ## Optional
@@ -80,6 +98,18 @@ $ vi mysql5.6/conf.d/my.cnf
 $ vi mysql5.7/conf.d/my.cnf
 ```
 
+### Edit my.cnf for mariadb v10.0
+
+```bash
+$ vi mariadb10.0/conf.d/my.cnf
+```
+
+### Edit my.cnf for mariadb v10.1
+
+```bash
+$ vi mariadb10.1/conf.d/my.cnf
+```
+
 ### Edit default schema, user, password
 
 If you change database-schema or user or password or root-password, Edit docker-compose.yml.
@@ -94,12 +124,22 @@ If you change database-schema or user or password or root-password, Edit docker-
 ### Re-create mysql containers
 
 ```bash
+# Stop mysql containers.
+$ docker-compose stop
+Stopping mysql5.5 ... done
+Stopping mysql5.6 ... done
+Stopping mysql5.7 ... done
+Stopping mariadb10.0 ... done
+Stopping mariadb10.1 ... done
+
 # Destroy all mysql containers.
 $ docker-compose rm -f
-Going to remove mysql5.6, mysql5.7, mysql5.5
+Going to remove mysql5.6, mariadb10.0, mariadb10.1, mysql5.7, mysql5.5
+Removing mysql5.5 ... done
 Removing mysql5.6 ... done
 Removing mysql5.7 ... done
-Removing mysql5.5 ... done
+Removing mariadb10.0 ... done
+Removing mariadb10.1 ... done
 
 # Create and start mysql containers.
 $ docker-compose up -d

@@ -33,4 +33,29 @@ mysql5.7:
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
   volumes:
-    - ./mysql5.5/conf.d:/etc/mysql/conf.d
+    - ./mysql5.7/conf.d:/etc/mysql/conf.d
+
+mariadb10.0:
+  image: mariadb:10.0
+  container_name: mariadb10.0
+  ports:
+    - 3310:3306
+  environment:
+    - MYSQL_DATABASE=work
+    - MYSQL_USER=worker
+    - MYSQL_PASSWORD=worker
+    - MYSQL_ROOT_PASSWORD=root
+  volumes:
+    - ./mariadb10.0/conf.d:/etc/mysql/conf.d
+mariadb10.1:
+  image: mariadb:10.1
+  container_name: mariadb10.1
+  ports:
+    - 3311:3306
+  environment:
+    - MYSQL_DATABASE=work
+    - MYSQL_USER=worker
+    - MYSQL_PASSWORD=worker
+    - MYSQL_ROOT_PASSWORD=root
+  volumes:
+    - ./mariadb10.1/conf.d:/etc/mysql/conf.d
