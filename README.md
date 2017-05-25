@@ -8,6 +8,8 @@ Create all mysql-server docker container.
 - MySQL v5.7
 - mariadb v10.0
 - mariadb v10.1
+- mariadb v10.2
+- mariadb v10.3
 
 This docker-compose.yml support mysql and mariadb.
 
@@ -76,6 +78,12 @@ $ mysql -h$(docker-machine ip mysql) -P3310 -uworker -pworker work
 
 # Connect mariadb v10.1
 $ mysql -h$(docker-machine ip mysql) -P3311 -uworker -pworker work
+
+# Connect mariadb v10.2
+$ mysql -h$(docker-machine ip mysql) -P3312 -uworker -pworker work
+
+# Connect mariadb v10.3
+$ mysql -h$(docker-machine ip mysql) -P3313 -uworker -pworker work
 ```
 
 ## Optional
@@ -110,6 +118,18 @@ $ vi mariadb10.0/conf.d/my.cnf
 $ vi mariadb10.1/conf.d/my.cnf
 ```
 
+### Edit my.cnf for mariadb v10.2
+
+```bash
+$ vi mariadb10.2/conf.d/my.cnf
+```
+
+### Edit my.cnf for mariadb v10.3
+
+```bash
+$ vi mariadb10.3/conf.d/my.cnf
+```
+
 ### Edit default schema, user, password
 
 If you change database-schema or user or password or root-password, Edit docker-compose.yml.
@@ -131,15 +151,19 @@ Stopping mysql5.6 ... done
 Stopping mysql5.7 ... done
 Stopping mariadb10.0 ... done
 Stopping mariadb10.1 ... done
+Stopping mariadb10.2 ... done
+Stopping mariadb10.3 ... done
 
 # Destroy all mysql containers.
 $ docker-compose rm -f
-Going to remove mysql5.6, mariadb10.0, mariadb10.1, mysql5.7, mysql5.5
+Going to remove mysql5.5, mysql5.6, mysql5.7, mariadb10.0, mariadb10.1, mariadb10.2, mariadb10.3
 Removing mysql5.5 ... done
 Removing mysql5.6 ... done
 Removing mysql5.7 ... done
 Removing mariadb10.0 ... done
 Removing mariadb10.1 ... done
+Removing mariadb10.2 ... done
+Removing mariadb10.3 ... done
 
 # Create and start mysql containers.
 $ docker-compose up -d
