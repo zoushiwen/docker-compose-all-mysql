@@ -8,6 +8,7 @@ mysql5.5:
     - MYSQL_USER=worker
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
+    - TZ=UTC
   volumes:
     - ./mysql5.5/conf.d:/etc/mysql/conf.d
 mysql5.6:
@@ -20,6 +21,7 @@ mysql5.6:
     - MYSQL_USER=worker
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
+    - TZ=UTC
   volumes:
     - ./mysql5.6/conf.d:/etc/mysql/conf.d
 mysql5.7:
@@ -32,6 +34,7 @@ mysql5.7:
     - MYSQL_USER=worker
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
+    - TZ=UTC
   volumes:
     - ./mysql5.7/conf.d:/etc/mysql/conf.d
 mysql8.0:
@@ -44,6 +47,7 @@ mysql8.0:
     - MYSQL_USER=worker
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
+    - TZ=UTC
   volumes:
     - ./mysql8.0/conf.d:/etc/mysql/conf.d
 
@@ -57,6 +61,7 @@ mariadb10.0:
     - MYSQL_USER=worker
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
+    - TZ=UTC
   volumes:
     - ./mariadb10.0/conf.d:/etc/mysql/conf.d
 mariadb10.1:
@@ -69,6 +74,7 @@ mariadb10.1:
     - MYSQL_USER=worker
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
+    - TZ=UTC
   volumes:
     - ./mariadb10.1/conf.d:/etc/mysql/conf.d
 mariadb10.2:
@@ -81,6 +87,7 @@ mariadb10.2:
     - MYSQL_USER=worker
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
+    - TZ=UTC
   volumes:
     - ./mariadb10.2/conf.d:/etc/mysql/conf.d
 mariadb10.3:
@@ -93,5 +100,6 @@ mariadb10.3:
     - MYSQL_USER=worker
     - MYSQL_PASSWORD=worker
     - MYSQL_ROOT_PASSWORD=root
+    - TZ=UTC
   volumes:
     - ./mariadb10.3/conf.d:/etc/mysql/conf.d
