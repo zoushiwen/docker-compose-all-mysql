@@ -24,13 +24,9 @@ https://www.docker.com/products/docker-desktop
 
 ### Install mysql-client
 
-Install mysql client only for Mac OSX.
-```bash
-$ brew upgrade
-$ brew install mysql --client-only
-```
+`No need to install mysql client` .
 
-It is not necessary to install mysql-server.
+When connect-xxx.sh execute, `the mysql client installed in the docker container is executed locally` .
 
 ### Clone this repository
 
@@ -84,13 +80,13 @@ $ vi ./mariadb10.3/conf.d/my.cnf
 
 ### Customize default schema, user, password
 
-If you change database-schema or user or password or root-password, Edit docker-compose.yml.
+If you change database-schema or user or password or root-password, Edit `.env` .
 
 ```yaml
-- MYSQL_DATABASE=work
-- MYSQL_USER=worker
-- MYSQL_PASSWORD=worker
-- MYSQL_ROOT_PASSWORD=root
+DB_DATABASE=work
+DB_USER=worker
+DB_PASSWORD=worker
+DB_ROOT_PASSWORD=root
 ```
 
 ### Remove logs
