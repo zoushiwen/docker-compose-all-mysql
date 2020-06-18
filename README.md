@@ -28,10 +28,18 @@ https://www.docker.com/products/docker-desktop
 
 When connect-xxx.sh execute, `the mysql client installed in the docker container is executed locally` .
 
+### Install docker-compose
+
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+```
+
 ### Clone this repository
 
 ```bash
 git clone git@github.com:treetips/docker-compose-all-mysql.git
+
 ```
 
 ### Start mysql docker containers
@@ -49,15 +57,12 @@ docker-compose -f docker-compose.5.7.yml up -d
 
 Connect remote mysql servers.
 
-```bash
-$ ./connect-mysql-5-5.sh
-$ ./connect-mysql-5-6.sh
-$ ./connect-mysql-5-6.sh
-$ ./connect-mysql-8-0.sh
-$ ./connect-mariadb-10-0.sh
-$ ./connect-mariadb-10-1.sh
-$ ./connect-mariadb-10-2.sh
-$ ./connect-mariadb-10-3.sh
+```
+bash ./connect-mysql-5-5.sh
+...
+
+bash  ./connect-mariadb-10-3.sh
+
 ```
 
 ## Optional
