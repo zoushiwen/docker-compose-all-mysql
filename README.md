@@ -38,6 +38,11 @@ git clone git@github.com:treetips/docker-compose-all-mysql.git
 
 ```bash
 $ docker-compose up -d
+
+
+只启动 mysql 5.7
+docker-compose -f docker-compose.5.7.yml up -d
+
 ```
 
 ### Connect any mysql-server on docker container
